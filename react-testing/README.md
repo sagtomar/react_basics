@@ -38,8 +38,10 @@ test function takes 2 arguments,
 
 Type of Testing covered: Assertion Testing
 
-**Testing simple functions** 
+**Testing simple functions**
+
 **Testing UI Element**
+
 **Testing Component**
 
 The `fireEvent.click` method will simulate an end user clicking a checkbox on a webpage form. From there, you can write assertion tests.
