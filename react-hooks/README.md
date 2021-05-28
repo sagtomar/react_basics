@@ -6,6 +6,7 @@
 
 **npm start** : to run the project
 
+**npm test** : to run test on project that are applied
 
 ## Project Structure
 
@@ -26,43 +27,30 @@ But this approach introduce lots of efforts and makes it prone to errors.
 
 So instead we use JSX and get rid of React.createElement, what is does, it takes normal html and converts into this format(done by Babel)
 
-## Hooks
+## Testing (supplied with JEST)
 
-### useState
+Files created with extention filename.test.js will be considered for testing purpose by the testing library (JEST).
 
-used to keep track of local variables and manage the state as per our need
+test function takes 2 arguments,
 
-import {useState} from "react";
+1. name of the test
+2. callback for calling the function and testing it
 
-useState takes 2 arguments,
+Type of Testing covered: Assertion Testing
 
-1. variable of an array - to keep track of local variable
-2. function - to update the state/ value of the variable
+**Testing simple functions** 
+**Testing UI Element**
+**Testing Component**
 
-### useEffect
+The `fireEvent.click` method will simulate an end user clicking a checkbox on a webpage form. From there, you can write assertion tests.
 
-to manage side effects that are not related to the component's render
+An assertion test returns a pass or fail; it will return a pass when a function's output returns an expected value.
 
-The `useEffect` Hook is useful to perform additional work behind the scenes, without affecting the appearance of the webpage.
+App.test.js is created by default when Create React App is installed, and any file ending in `.test.js` can be used for testing.
 
-can be helpful for console messages, animation, user data or we can say it looks for change in some variable values and we can take action accordingly and keep a record of them.
+checking the status of the checkbox if the value is set to from the initial value of false after testing.
 
-import {useEffect} from "react";**
+The `render` component from the React Testing Library allows you to assert whether specific words, phrases, or html tags were rendered.
 
-It takes a callback function which takes 2 arguments
-
-1. variable/ manual use
-2. Dependency Array, if we keep it empty array i.e. [] then it will not take other values.... it will show only the value for the first time and will show a warning in console for missing dependency. And if we pass currentMood in it, then we can keep track of it
-
-If we don't pass the variable in the dependency array then it will print console for both every time even if only one is changed. to monitor the value and console for only the one that is updated. then pass value in the array as shown below
-
-### useReducer
-
-these are used to reduce the function by managing 2 arguments
-
-1. function that has to reduced for managing the functionality
-2. initial state
-
-import {useReducer} from "react";
 
 Detailed Notes with images: https://www.notion.so/React-740ff862369d41ad8826ba1942a58e70
