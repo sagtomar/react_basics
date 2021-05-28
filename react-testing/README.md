@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+### Starting Commands:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**git init** : for setting up empty repository
 
-## Available Scripts
+**npx create-react-app "project name"** : for creating a new project to start
 
-In the project directory, you can run:
+**npm start** : to run the project
 
-### `npm start`
+**npm test** : to run test on project that are applied
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Project Structure
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+/**public** : This folder contain the default html page "index" and assets 
 
-### `npm test`
+/**src** : This folder contains all the logic for the app
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Key Files
 
-### `npm run build`
+**/src/index.js** : This file is the starting point of the app. **ReactDOM.render** is the method to initialize the app.
+it takes in 2 arguments
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. initial design element or page to render
+2. pointing to starting html page (addressing the id in the /public/index.html page's div ID)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+createElement method actually allows up to implement Parent child (nested) tree structure of the contents.
+But this approach introduce lots of efforts and makes it prone to errors.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+So instead we use JSX and get rid of React.createElement, what is does, it takes normal html and converts into this format(done by Babel)
 
-### `npm run eject`
+## Testing (supplied with JEST)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Files created with extention filename.test.js will be considered for testing purpose by the testing library (JEST).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+test function takes 2 arguments,
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. name of the test
+2. callback for calling the function and testing it
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Type of Testing covered: Assertion Testing
 
-## Learn More
+**Testing simple functions** 
+**Testing UI Element**
+**Testing Component**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The `fireEvent.click` method will simulate an end user clicking a checkbox on a webpage form. From there, you can write assertion tests.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+An assertion test returns a pass or fail; it will return a pass when a function's output returns an expected value.
 
-### Code Splitting
+App.test.js is created by default when Create React App is installed, and any file ending in `.test.js` can be used for testing.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+checking the status of the checkbox if the value is set to from the initial value of false after testing.
 
-### Analyzing the Bundle Size
+The `render` component from the React Testing Library allows you to assert whether specific words, phrases, or html tags were rendered.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Detailed Notes with images: https://www.notion.so/React-740ff862369d41ad8826ba1942a58e70
